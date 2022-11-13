@@ -1,0 +1,125 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/* width */
+/* ::-webkit-scrollbar {
+    width: 7px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+    background: hsl(206, 14%, 15%);
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+    background: #3CACEC;
+    border-radius: 10px;
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #2d7ba8;
+} */
+::-webkit-scrollbar {
+    display: none;
+}
+
+.main-text {
+    font-size: 1.125rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: white;
+}
+.custom-scroll-bounce {
+    animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(15%);
+    }
+
+    50% {
+        transform: translateY(5%);
+    }
+}
+.showcase-custom-slide-out-right {
+    animation: showcase-slide-out-right .5s;
+}
+.showcase-custom-slide-out-left {
+    animation: showcase-slide-out-left .5s;
+}
+.showcase-custom-slide-in-right {
+    animation: showcase-slide-in-right .5s;
+}
+.showcase-custom-slide-in-left {
+    animation: showcase-slide-in-left .5s;
+}
+
+@keyframes showcase-slide-out-right {
+    from {
+        opacity: 1;
+        transform: translateX(0px) scale(.7);
+    }
+    to {
+        transform: translateX(-70px) scale(.7);
+        opacity: 0;
+    }
+}
+
+@keyframes showcase-slide-out-left {
+    from {
+        opacity: 1;
+        transform: translateX(0px) scale(.7);
+    }
+
+    to {
+        transform: translateX(70px) scale(.7);
+        opacity: 0;
+    }
+}
+@keyframes showcase-slide-in-right {
+    from {     
+        transform: translateX(-70px) scale(.7);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px) scale(.7);
+    }
+}
+
+@keyframes showcase-slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(70px) scale(.7);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px) scale(.7);
+    }
+}
+.custom-animation-flaoting{
+    animation: custom-animation-flaoting 2s ease-in-out alternate infinite;
+}
+@keyframes custom-animation-flaoting {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+.custom-translate-hide {
+    transform: translateY(150%) !important;
+    /* opacity: 0 !important; */
+}

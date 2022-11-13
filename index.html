@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Simone Mignanelli">
+        <title>Simone Mignanelli - Work</title>
+        <link href="src/css/main.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="src/js/works-showcase.js"></script>
+        <script src="src/js/animations.js"></script>
+    </head>
+    <body class="bg-[#070707]">
+        <div id="loader-fade-opacity" class="absolute z-[100] bg-black inset-0 flex items-center justify-center">
+            <h1 id="loader-percent" class="main-text"></h1>
+        </div>
+        <!-- NAVBAR -->
+        <ul class="fixed bg-gradient-to-b from-[rgba(0,0,0,.5)] to-[rgba(0,0,0,0)] top-0 py-8 z-[70] w-full flex flex-row gap-x-12 justify-center list-style-none">
+            <a href=""><li class="main-text">Work</li></a>
+            <a href="about.html"><li class="main-text opacity-25 hover:opacity-100 transition ease-in">About</li></a>
+        </ul>
+        <div id="scroll-bg-fade" class="z-[60] bg-black fixed inset-0 opacity-0 hidden"></div>
+        <!-- HERO CONTENT -->
+        <div class="fixed z-[50] inset-0 flex flex-col max-h-[100vh] w-full h-full justify-center align-center p-5 lg:p-8">
+            <!-- PROJECT SHOWCASE -->
+            <div class="w-full flex flex-row justify-center items-center">
+                <h1 class="main-text hidden 2xl:block text-3xl absolute left-12"><span class="opacity-20">0</span><span id="showcase-index">1</span></h1>
+                <svg id="showcase-arrow-left" class="w-[25px] h-[25px] md:w-[40px] md:h-[40px] cursor-pointer opacity-30 hover:opacity-90 transition ease-in-out" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_908_720)">
+                        <path d="M32 37.4287L16.2857 21L32 4.57157L30.0714 0.5L9.57142 21L30.0714 41.5L32 37.4287Z" fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_908_720">
+                            <rect width="41" height="41" fill="white" transform="matrix(-1 0 0 1 41 0)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div class="w-full max-w-[1300px] flex items-center justify-center">
+                    <img id="showcase-main-preview" class="cursor-pointer w-full scale-[.7] hover:scale-[.8]  transition ease-[cubic-bezier(.88,1.58,.31,.73)] duration-300" src="" alt="showcase_preview">
+                </div>
+                <svg id="showcase-arrow-right" class="w-[25px] h-[25px] md:w-[40px] md:h-[40px] cursor-pointer opacity-30 hover:opacity-90 transition ease-in-out" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_908_722)">
+                        <path d="M9 37.4287L24.7143 21L9 4.57157L10.9286 0.5L31.4286 21L10.9286 41.5L9 37.4287Z" fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_908_722">
+                            <rect width="41" height="41" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <!-- SCROLL TEXT -->
+            <div class="absolute right-0 left-0 bottom-8 flex flex-col opacity-50 items-center gap-y-2">
+                <h1 class="main-text text-xs md:text-base font-semibold">Scroll to see about</h1>
+                <svg class="w-[25px] h-[25px] md:w-[33px] md:h-[33px]" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.5 29.7C18.9506 29.7 21.3008 28.7265 23.0337 26.9937C24.7665 25.2609 25.74 22.9106 25.74 20.46V12.54C25.74 10.0894 24.7665 7.73922 23.0337 6.00638C21.3008 4.27355 18.9506 3.30005 16.5 3.30005C14.0494 3.30005 11.6992 4.27355 9.96634 6.00638C8.23351 7.73922 7.26001 10.0894 7.26001 12.54V20.46C7.26001 22.9106 8.23351 25.2609 9.96634 26.9937C11.6992 28.7265 14.0494 29.7 16.5 29.7ZM8.58001 12.54C8.58001 10.4395 9.41444 8.42505 10.8997 6.93976C12.385 5.45448 14.3995 4.62005 16.5 4.62005C18.6005 4.62005 20.615 5.45448 22.1003 6.93976C23.5856 8.42505 24.42 10.4395 24.42 12.54V20.46C24.42 22.5606 23.5856 24.575 22.1003 26.0603C20.615 27.5456 18.6005 28.38 16.5 28.38C14.3995 28.38 12.385 27.5456 10.8997 26.0603C9.41444 24.575 8.58001 22.5606 8.58001 20.46V12.54Z"
+                        fill="white" />
+                    <path class="custom-scroll-bounce"
+                        d="M15.84 16.17H15.8994L16.0314 16.3086C16.0928 16.3705 16.1658 16.4196 16.2462 16.4531C16.3266 16.4866 16.4129 16.5038 16.5 16.5038C16.5871 16.5038 16.6734 16.4866 16.7538 16.4531C16.8343 16.4196 16.9073 16.3705 16.9686 16.3086L17.1006 16.17H17.16V16.1106L20.9286 12.3486L19.9914 11.4114L17.16 14.2494V7.26001H15.84V14.2494L13.0086 11.4114L12.0714 12.3486L15.84 16.1106V16.17Z"
+                        fill="white" />
+                </svg>
+            </div>
+        </div>
+        <div id="work-content" class="relative overflow-hidden sticky z-[60] bg-[#080808] mt-[100vh] min-h-[100vh]">
+            <div id="showcase-content" class="p-10 md:p-16 lg:p-24 xl:p-36 bg-[#111111] mx-0 flex flex-col gap-y-[50px] lg:gap-y-[100px] transition-[margin] duration-300 ease-in-out">
+                <div class="flex flex-col-reverse gap-y-8 gap-x-8 lg:flex-row lg:justify-between">
+                    <div class="flex flex-col gap-y-8 lg:gap-y-12">
+                        <div class="flex flex-col gap-y-4">
+                            <h1 id="showcase-name" class="main-text text-2xl md:text-4xl tracking-wider font-bold">Epub Reader</h1>
+                            <div class="flex flex-row gap-x-3 items-center"><div id="showcase-hex-color" class="w-[10px] h-[10px] rounded-full"></div><h1 id="showcase-type" class="main-text text-base md:text-lg">App + Design</h1></div>
+                        </div>
+                        <p id="showcase-description" class="main-text text-base md:text-lg max-w-[800px]"></p>
+                        <div class="flex flex-row items-center">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_904_56)">
+                                    <path
+                                        d="M10.3643 19.0549L7.41844 22.0008C6.19714 23.2221 4.21935 23.2221 2.99908 22.001C1.77856 20.7805 1.77856 18.8025 2.99883 17.5823L8.89159 11.6895C10.1119 10.4692 12.0899 10.4692 13.3101 11.6895C13.7169 12.0963 14.3765 12.0963 14.7833 11.6895C15.1901 11.2827 15.1901 10.6231 14.7833 10.2163C12.7494 8.18244 9.45234 8.18244 7.41844 10.2163L1.52573 16.1091C-0.508169 18.143 -0.508169 21.44 1.52573 23.4739C3.55938 25.5089 6.85667 25.5089 8.89164 23.4739L11.8375 20.528C12.2443 20.1212 12.2443 19.4617 11.8375 19.0549C11.4307 18.6481 10.7711 18.6481 10.3643 19.0549Z"
+                                        fill="white" />
+                                    <path
+                                        d="M23.4743 1.52542C21.4404 -0.508475 18.1423 -0.508475 16.1084 1.52542L12.574 5.05982C12.1672 5.46661 12.1672 6.12618 12.574 6.53297C12.9808 6.93976 13.6404 6.93976 14.0472 6.53297L17.5815 2.99858C18.8018 1.77826 20.7808 1.77826 22.0012 2.99858C23.2214 4.21885 23.2214 6.19684 22.0012 7.41711L15.5199 13.8984C14.2995 15.1188 12.3216 15.1188 11.1013 13.8984C10.6945 13.4917 10.035 13.4917 9.62818 13.8984C9.22139 14.3052 9.22139 14.9648 9.62818 15.3716C11.6621 17.4055 14.9591 17.4055 16.993 15.3716L23.4743 8.89031C25.5082 6.85641 25.5082 3.55932 23.4743 1.52542Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_904_56">
+                                        <rect width="25" height="25" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <a id="showcase-github-link" href="https://www.github.com/mignaway/EpubReader" class="underline main-text text-base md:text-lg ml-3" target="_blank">github.com/mignaway/EpubReader</a>
+                        </div>
+                    </div>
+                    <img id="showcase-animated-logo" class="max-w-[150px] max-h-[150px] lg:max-w-[250px] lg:max-h-[250px]" src="src/assets/epubreader-logo.gif" alt="epubreader-logo-animated"> 
+                </div>
+                <div class="w-100 h-[1px] bg-white/10"></div>
+                <div class=" flex flex-col w-100 items-end gap-y-8">
+                    <img id="showcase-website-image" class="w-100" src="src/assets/epubreader_website_preview.png" alt="epubreader-website-preview">
+                    <a id="showcase-website-link" target="_blank" href="" class="group flex flex-row items-center gap-x-4 cursor-pointer">
+                        <h1 class="main-text group-hover:underline">Go to website</h1>
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9L20 9V7L0 7L0 9Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- FOOTER -->
+            <div id="footer" class="bg-[#080808] flex flex-row justify-between items-center">
+                <div class="w-full flex flex-col-reverse md:flex-row gap-x-20 gap-y-10 justify-between p-10 md:p-20 ">
+                    <div>
+                        <div>
+                            <h1 class="main-text text-2xl md:text-3xl mb-5">Simone Mignanelli</h1>
+                            <p class="main-text text-base md:text-lg mb-10 max-w-[700px]"><span class="opacity-[.75]">Thank you for your time. Please feel free to contact me if you need any further information or collaboration requests at</span><a target="_blank" href="mailto:simonemignanelli@gmail.com"> simonemignanellicc@gmail.com</a><span class="opacity-[.75]">.</span></p>
+                        </div>
+                        <h2 class="main-text text-xs md:text-base opacity-50">Copyright © 2022 - All Rights Deserved</h2>
+                    </div>
+                    <div class="w-100 h-[1px] bg-white/10"></div>
+                    <ul class="flex flex-row md:flex-col gap-x-10 gap-y-5 flex-wrap md:justify-between">
+                        <a href="mailto:simonemignanellicc@gmail.com" target="_blank">
+                            <li class="main-text text-base md:text-lg hover:underline flex items-center flex-row-reverse md:flex-row gap-x-3 justify-end">E-mail
+                            <svg class="w-[22px] h-[22px] md:w-[25px] md:h-[25px]" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M23 8.42706V17.7812C23 18.6515 22.6543 19.4861 22.0389 20.1014C21.4236 20.7168 20.589 21.0625 19.7188 21.0625H5.28125C4.41101 21.0625 3.57641 20.7168 2.96106 20.1014C2.3457 19.4861 2 18.6515 2 17.7812V8.42706L12.1666 14.4094C12.2676 14.469 12.3827 14.5004 12.5 14.5004C12.6173 14.5004 12.7324 14.469 12.8334 14.4094L23 8.42706ZM19.7188 4C20.5261 3.99987 21.3052 4.29742 21.907 4.83572C22.5087 5.37402 22.8909 6.11528 22.9803 6.91769L12.5 13.0825L2.01969 6.91769C2.10915 6.11528 2.4913 5.37402 3.09304 4.83572C3.69479 4.29742 4.47387 3.99987 5.28125 4H19.7188Z"
+                                    fill="white" />
+                            </svg>
+                            </li>
+                        </a>
+                        <a href="https://web.telegram.org/k/#@mignaway" target="_blank">
+                            <li class="main-text text-base md:text-lg hover:underline flex items-center flex-row-reverse md:flex-row gap-x-3 justify-end">Telegram
+                            <svg class="w-[22px] h-[22px] md:w-[25px] md:h-[25px]" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.526 4.37181L3.05729 11.4937C1.79687 11.9999 1.80416 12.7031 2.82604 13.0166L7.56771 14.4958L18.5385 7.57389C19.0573 7.25827 19.5312 7.42806 19.1417 7.77389L10.2531 15.7958H10.251L10.2531 15.7968L9.92604 20.6843C10.4052 20.6843 10.6167 20.4645 10.8854 20.2051L13.1885 17.9656L17.9792 21.5041C18.8625 21.9906 19.4969 21.7406 19.7167 20.6864L22.8615 5.86556C23.1833 4.57493 22.3687 3.99056 21.526 4.37181V4.37181Z"
+                                    fill="white" />
+                            </svg>
+                            </li>
+                        </a>
+                        <a href="https://github.com/mignaway" target="_blank">
+                            <li class="main-text text-base md:text-lg hover:underline flex items-center flex-row-reverse md:flex-row gap-x-3 justify-end">Github
+                            <svg class="w-[22px] h-[22px] md:w-[25px] md:h-[25px]" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.4902 2.36279C6.45264 2.36035 1.5625 7.24805 1.5625 13.2808C1.5625 18.0513 4.62158 22.1064 8.88184 23.5957C9.45557 23.7397 9.36768 23.332 9.36768 23.0537V21.1616C6.05469 21.5498 5.92041 19.3574 5.69824 18.9912C5.24902 18.2246 4.18701 18.0293 4.50439 17.6631C5.25879 17.2749 6.02783 17.7607 6.91895 19.0767C7.56348 20.0313 8.8208 19.8701 9.45801 19.7114C9.59717 19.1377 9.89502 18.625 10.3052 18.2271C6.87256 17.6118 5.44189 15.5171 5.44189 13.0269C5.44189 11.8184 5.83984 10.7075 6.62109 9.81152C6.12305 8.33447 6.66748 7.06982 6.74072 6.88184C8.15918 6.75488 9.63379 7.89746 9.74853 7.98779C10.5542 7.77051 11.4746 7.65576 12.5049 7.65576C13.54 7.65576 14.4629 7.77539 15.2759 7.99512C15.5518 7.78516 16.9189 6.80371 18.2373 6.92334C18.3081 7.11133 18.8403 8.34668 18.3716 9.8042C19.1626 10.7026 19.5654 11.8232 19.5654 13.0342C19.5654 15.5293 18.125 17.6265 14.6826 18.2319C14.9775 18.5219 15.2116 18.8677 15.3713 19.2492C15.531 19.6306 15.6131 20.0401 15.6128 20.4536V23.2002C15.6323 23.4199 15.6128 23.6372 15.979 23.6372C20.3027 22.1797 23.4155 18.0952 23.4155 13.2832C23.4155 7.24805 18.5229 2.36279 12.4902 2.36279V2.36279Z"
+                                    fill="white" />
+                            </svg>
+                            </li>
+                        </a>
+                        <a href="https://www.instagram.com/mignaway/" target="_blank">
+                            <li class="main-text text-base md:text-lg hover:underline flex items-center flex-row-reverse md:flex-row gap-x-3 justify-end">Instagram
+                            <svg class="w-[22px] h-[22px]" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1026_112)">
+                                <path d="M17.1875 0H7.8125C3.49844 0 0 3.49844 0 7.8125V17.1875C0 21.5016 3.49844 25 7.8125 25H17.1875C21.5016 25 25 21.5016 25 17.1875V7.8125C25 3.49844 21.5016 0 17.1875 0ZM22.6562 17.1875C22.6562 20.2031 20.2031 22.6562 17.1875 22.6562H7.8125C4.79688 22.6562 2.34375 20.2031 2.34375 17.1875V7.8125C2.34375 4.79688 4.79688 2.34375 7.8125 2.34375H17.1875C20.2031 2.34375 22.6562 4.79688 22.6562 7.8125V17.1875Z" fill="white"/>
+                                <path d="M12.5 6.25C9.04844 6.25 6.25 9.04844 6.25 12.5C6.25 15.9516 9.04844 18.75 12.5 18.75C15.9516 18.75 18.75 15.9516 18.75 12.5C18.75 9.04844 15.9516 6.25 12.5 6.25ZM12.5 16.4062C10.3469 16.4062 8.59375 14.6531 8.59375 12.5C8.59375 10.3453 10.3469 8.59375 12.5 8.59375C14.6531 8.59375 16.4062 10.3453 16.4062 12.5C16.4062 14.6531 14.6531 16.4062 12.5 16.4062Z" fill="white"/>
+                                <path d="M19.2188 6.61387C19.6787 6.61387 20.0516 6.241 20.0516 5.78105C20.0516 5.32111 19.6787 4.94824 19.2188 4.94824C18.7588 4.94824 18.386 5.32111 18.386 5.78105C18.386 6.241 18.7588 6.61387 19.2188 6.61387Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1026_112">
+                                <rect width="25" height="25" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

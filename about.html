@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Simone Mignanelli">
+    <title>Simone Mignanelli - About</title>
+    <link href="src/css/main.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.1/smooth-scrollbar.js"></script>
+    <script src="src/js/animations.js"></script>
+    <script src="src/js/about-project-preview.js"></script>
+    <!-- PREVENT SCROLL POSITION CAUSING BUGS -->
+    <script>history.scrollRestoration = "manual"</script>
+    <script>
+        
+        $(window).on('load', function () {
+            var scrollbar = Scrollbar.init(document.getElementById('momentum-body'), { 'damping': 0.03 })
+            Scrollbar.detachStyle()
+            scrollbar.addListener(({ offset }) => {
+                document.getElementById('main-navbar').style.top = offset.y + 'px';
+                document.getElementById('main-navbar').style.left = offset.x + 'px';
+                checkElementsVisible()
+            })
+            function checkElementsVisible() {
+
+                var elements = document.querySelectorAll(".custom-translate-hide")
+                // console.log(elements.length)
+                Array.from(elements).forEach((elem, i) => {
+                    scrollbar.isVisible(elem) ? elements[i].classList.remove('custom-translate-hide') : elements[i].classList.add('custom-translate-hide');
+                })
+            }
+            setTimeout(() => {
+                checkElementsVisible()
+            },100)
+        })
+    </script>
+</head>
+
+<body id="momentum-body" class="bg-[#070707] overflow-hidden">
+    <div id="loader-fade-opacity" class="absolute z-[100] bg-black inset-0 flex items-center justify-center">
+        <h1 id="loader-percent" class="main-text"></h1>
+    </div>
+    <!-- NAVBAR -->
+    <ul id="main-navbar" class="fixed bg-gradient-to-b from-[rgba(0,0,0,.5)] to-[rgba(0,0,0,0)] top-0 py-8 z-[70] w-full flex flex-row gap-x-12 justify-center list-style-none">
+        <a href="index.html"><li class="main-text opacity-25 hover:opacity-100 transition ease-in">Work</li></a>
+        <a><li class="main-text">About</li></a>
+    </ul>
+    <!-- HELLO THERE RIGHT TEXT -->
+    
+    <!-- <div id="scroll-bg-fade" class="z-[60] bg-black fixed inset-0 opacity-0 hidden"></div> -->
+    <div id="work-content" class="relative overflow-hidden sticky z-[60] bg-[#111111] min-h-[100vh]">
+        <h1 class="absolute z-[61] right-[calc(4%-40px)] top-20 main-text text-white/[.05] text-[550px] rotate-180 whitespace-nowrap leading-[3px]" style="writing-mode: vertical-rl">Designer</h1>
+        <!-- CONTENT -->
+        <div class="py-[250px] pl-[calc(20%-40px)] pr-[25px] bg-[#111111] flex flex-col gap-y-[200px] mx-0 transition-[margin] duration-300 ease-in-out">
+            <h1 class="block overflow-hidden"><span class="custom-translate-hide block main-text font-semibold md:text-[40px] text-[30px]  w-full max-w-[850px] leading-[150%] transition  duration-1000">I’m an Independent Full Stack Developer with years of experience in Web Development & Design.</span></h1>
+            <h1 class="block overflow-hidden"><span class="custom-translate-hide block main-text font-semibold md:text-[40px] text-[30px]  w-full max-w-[850px] leading-[150%] transition  duration-1000">I’m currently studying at Sapienza University of Rome to major in Computer Science.</span></h1>
+            <div>
+                <h1 class="block overflow-hidden"><span class="custom-translate-hide block main-text font-semibold md:text-[40px] text-[30px]   transition  duration-1000">Projects & Designs</span></h1>
+                <div class="pt-[50px] pl-[25px] lg:pl-[50px] xl:pt-[75px] xl:pl-[75px] flex flex-col gap-y-[60px] max-w-[700px]">
+                    <a href="https://github.com/mignaway/EpubReader" target="_blank" class="project-preview group cursor-pointer relative flex flex-col gap-y-1 py-[15px]">
+                        <h1 class="block overflow-hidden">
+                            <span class="custom-translate-hide block main-text font-semibold md:text-[30px] text-[20px]   transition  duration-1000">Epub Reader</span>
+                        </h1>
+                        <div class="block overflow-hidden opacity-[.3] group-hover:opacity-[.6] transition duration-300"><div class="custom-translate-hide block transition  duration-1000">
+                            <span class="main-text md:text-lg text-base align-middle">ElectronJS Application + Website + Design</span>
+                            <span class="main-text text-xs align-middle">•</span>
+                            <span class="main-text md:text-lg text-base align-middle">2022</span>
+                        </div></div>
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                            <img class="w-full max-w-[300px] max-h-[200px]" src="src/assets/epubreader/epubreader_website_preview.png">
+                            <div class="w-[30px] h-[30px] rounded-full bg-[#E3B230] flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 18V12M12 12V6M12 12H18M12 12H6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/mignaway/sorting-algorithm-visualizer" target="_blank" class="project-preview group cursor-pointer relative flex flex-col gap-y-1 py-2.5">
+                        <h1 class="block overflow-hidden">
+                            <span class="custom-translate-hide block main-text font-semibold md:text-[30px] text-[20px]   transition  duration-1000">Sorting Algorithm Visualizer</span>
+                        </h1>
+                        <div class="block overflow-hidden opacity-[.3] group-hover:opacity-[.6] transition duration-300"><div class="custom-translate-hide block transition  duration-1000">
+                            <span class="main-text md:text-lg text-base align-middle">ReactJS Website + Design</span>
+                            <span class="main-text text-xs align-middle">•</span>
+                            <span class="main-text md:text-lg text-base align-middle">2022</span>
+                        </div></div>
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                            <img class="w-full max-w-[300px] max-h-[200px]" src="src/assets/sorting-data-visualizer/sorting-data-visualizer_website_preview.png">
+                            <div class="w-[30px] h-[30px] rounded-full bg-[#EB3B50] flex items-center justify-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 18V12M12 12V6M12 12H18M12 12H6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="project-preview group cursor-pointer relative flex flex-col gap-y-1 py-2.5">
+                        <h1 class="block overflow-hidden">
+                            <span class="custom-translate-hide block main-text font-semibold md:text-[30px] text-[20px]   transition  duration-1000">PixelChess</span>
+                        </h1>
+                        <div class="block overflow-hidden opacity-[.3] group-hover:opacity-[.6] transition duration-300"><div class="custom-translate-hide block transition  duration-1000">
+                            <span class="main-text md:text-lg text-base align-middle">Web application + Design</span>
+                            <span class="main-text text-xs align-middle">•</span>
+                            <span class="main-text md:text-lg text-base align-middle">2022</span>
+                        </div></div>
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                            <img class="w-full max-w-[300px] max-h-[200px]" src="src/assets/about/project-not-available.jpg">
+                            <div class="w-[30px] h-[30px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 1.25C4.05 1.25 1.25 4.05 1.25 7.5C1.25 10.95 4.05 13.75 7.5 13.75C10.95 13.75 13.75 10.95 13.75 7.5C13.75 4.05 10.95 1.25 7.5 1.25ZM2.5 7.5C2.5 4.7375 4.7375 2.5 7.5 2.5C8.65625 2.5 9.71875 2.89375 10.5625 3.55625L3.55625 10.5625C2.86985 9.68946 2.49774 8.61056 2.5 7.5V7.5ZM7.5 12.5C6.34375 12.5 5.28125 12.1062 4.4375 11.4437L11.4437 4.4375C12.1301 5.31054 12.5023 6.38944 12.5 7.5C12.5 10.2625 10.2625 12.5 7.5 12.5Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-preview group cursor-pointer relative flex flex-col gap-y-1 py-2.5">
+                        <h1 class="block overflow-hidden">
+                            <span class="custom-translate-hide block main-text font-semibold md:text-[30px] text-[20px]   transition  duration-1000"><span class="mr-2 align-middle">JUno Game</span><span class="opacity-50 text-xl align-middle"> (University Project)</span></span>
+                        </h1>
+                        <div class="block overflow-hidden opacity-[.3] group-hover:opacity-[.6] transition duration-300"><div class="custom-translate-hide block transition  duration-1000">
+                            <span class="main-text md:text-lg text-base align-middle">Java + Design</span>
+                            <span class="main-text text-xs align-middle">•</span>
+                            <span class="main-text md:text-lg text-base align-middle">2022</span>
+                        </div></div>
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                            <img class="w-full max-w-[300px] max-h-[200px]" src="src/assets/about/project-not-available.jpg">
+                            <div class="w-[30px] h-[30px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 1.25C4.05 1.25 1.25 4.05 1.25 7.5C1.25 10.95 4.05 13.75 7.5 13.75C10.95 13.75 13.75 10.95 13.75 7.5C13.75 4.05 10.95 1.25 7.5 1.25ZM2.5 7.5C2.5 4.7375 4.7375 2.5 7.5 2.5C8.65625 2.5 9.71875 2.89375 10.5625 3.55625L3.55625 10.5625C2.86985 9.68946 2.49774 8.61056 2.5 7.5V7.5ZM7.5 12.5C6.34375 12.5 5.28125 12.1062 4.4375 11.4437L11.4437 4.4375C12.1301 5.31054 12.5023 6.38944 12.5 7.5C12.5 10.2625 10.2625 12.5 7.5 12.5Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-preview group cursor-pointer relative flex flex-col gap-y-1 py-2.5">
+                        <h1 class="block overflow-hidden">
+                            <span class="custom-translate-hide block main-text font-semibold md:text-[30px] text-[20px]   transition  duration-1000">Personal Debts</span>
+                        </h1>
+                        <div class="block overflow-hidden opacity-[.3] group-hover:opacity-[.6] transition duration-300"><div class="custom-translate-hide block transition  duration-1000">
+                            <span class="main-text md:text-lg text-base align-middle">React Native Mobile Application + Design</span>
+                            <span class="main-text text-xs align-middle">•</span>
+                            <span class="main-text md:text-lg text-base align-middle">2022</span>
+                        </div></div>
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                            <img class="w-full max-w-[300px] max-h-[200px]" src="src/assets/about/project-not-available.jpg">
+                            <div class="w-[30px] h-[30px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 1.25C4.05 1.25 1.25 4.05 1.25 7.5C1.25 10.95 4.05 13.75 7.5 13.75C10.95 13.75 13.75 10.95 13.75 7.5C13.75 4.05 10.95 1.25 7.5 1.25ZM2.5 7.5C2.5 4.7375 4.7375 2.5 7.5 2.5C8.65625 2.5 9.71875 2.89375 10.5625 3.55625L3.55625 10.5625C2.86985 9.68946 2.49774 8.61056 2.5 7.5V7.5ZM7.5 12.5C6.34375 12.5 5.28125 12.1062 4.4375 11.4437L11.4437 4.4375C12.1301 5.31054 12.5023 6.38944 12.5 7.5C12.5 10.2625 10.2625 12.5 7.5 12.5Z" fill="white"/>
+                                </svg>                   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 class="block overflow-hidden"><span class="custom-translate-hide block main-text font-semibold md:text-[40px] text-[30px]   transition  duration-1000">Feel free to contact me </span></h1>
+                <div class="pt-[25px] pl-[25px] lg:pt-[50px] lg:pl-[50px] xl:pt-[75px] xl:pl-[75px] flex flex-col gap-y-2.5">
+                    <a href="mailto:simonemignanellicc@gmail.com" target="_blank" class="block overflow-hidden opacity-50 hover:opacity-[1] transition duration-300"><span class="custom-translate-hide block main-text  transition  duration-1000">Email</span></a>
+                    <a href="https://web.telegram.org/k/#@mignaway" target="_blank" class="block overflow-hidden opacity-50 hover:opacity-[1] transition duration-300"><span class="custom-translate-hide block main-text  transition  duration-1000">Telegram</span></a>
+                    <a href="https://github.com/mignaway" target="_blank" class="block overflow-hidden opacity-50 hover:opacity-[1] transition duration-300"><span class="custom-translate-hide block main-text  transition  duration-1000">Github</span></a>
+                    <a href="https://www.instagram.com/mignaway/" target="_blank" class="block overflow-hidden opacity-50 hover:opacity-[1] transition duration-300"><span class="custom-translate-hide block main-text  transition  duration-1000">Instagram</span></a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-y-10">
+                <h1 class="block overflow-hidden"><span class="custom-translate-hide block main-text font-semibold md:text-[40px] text-[30px]  w-full max-w-[850px]  transition  duration-1000">Thanks for your time!</span></h1>
+                <h1 class="block overflow-hidden"><p class="custom-translate-hide block main-text text-base opacity-50  transition  duration-1000">Copyright © 2022 - All Rights Deserved</p></h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
