@@ -38,8 +38,6 @@ $(window).on('load', function () {
 
 function loadPreviewAndUpdateIndex(index, arrow_side_id){
     const data = WORKS_DATA[index];
-    // console.log(data)
-
 
     $('#showcase-main-preview').removeClass('showcase-custom-slide-in-right')
     $('#showcase-main-preview').removeClass('showcase-custom-slide-in-left')

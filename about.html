@@ -18,51 +18,38 @@
     <script>
         
         $(window).on('load', function () {
-            var Scrollbar = window.Scrollbar;
-            function MobilePlugin() {
-                Scrollbar.ScrollbarPlugin.apply(this, arguments);
-            }
+            if (window.matchMedia("(min-width: 1024px)").matches) {
+                $('#momentum-body').addClass("overflow-hidden")
+                var scrollbar = Scrollbar.init(document.getElementById('momentum-body'), { 'damping': 0.03 })
+                Scrollbar.detachStyle()
+                scrollbar.addListener(({ offset }) => {
+                    document.getElementById('main-navbar').style.top = offset.y + 'px';
+                    document.getElementById('main-navbar').style.left = offset.x + 'px';
+                    checkElementsVisible()
+                })
+                function checkElementsVisible() {
 
-            MobilePlugin.prototype = Object.create(Scrollbar.ScrollbarPlugin.prototype);
-
-            MobilePlugin.prototype.transformDelta = function (delta, fromEvent) {
-                if (fromEvent.type !== 'touchend') {
-                    return delta;
+                    var elements = document.querySelectorAll(".custom-translate-hide")
+                    // console.log(elements.length)
+                    Array.from(elements).forEach((elem, i) => {
+                        scrollbar.isVisible(elem) ? elements[i].classList.remove('custom-translate-hide') : elements[i].classList.add('custom-translate-hide');
+                    })
                 }
-
-                return {
-                    x: delta.x * this.options.speed,
-                    y: delta.y * this.options.speed
-                };
-            };
-
-            MobilePlugin.pluginName = 'filterEvent';
-            MobilePlugin.defaultOptions = {
-                speed: 0.5,
-            };
-            var scrollbar = Scrollbar.init(document.getElementById('momentum-body'), { 'damping': 0.03 })
-            Scrollbar.detachStyle()
-            scrollbar.addListener(({ offset }) => {
-                document.getElementById('main-navbar').style.top = offset.y + 'px';
-                document.getElementById('main-navbar').style.left = offset.x + 'px';
-                checkElementsVisible()
-            })
-            function checkElementsVisible() {
-
+                setTimeout(() => {
+                    checkElementsVisible()
+                },100)
+            } else {
                 var elements = document.querySelectorAll(".custom-translate-hide")
                 // console.log(elements.length)
                 Array.from(elements).forEach((elem, i) => {
-                    scrollbar.isVisible(elem) ? elements[i].classList.remove('custom-translate-hide') : elements[i].classList.add('custom-translate-hide');
+                    elements[i].classList.remove('custom-translate-hide')
                 })
             }
-            setTimeout(() => {
-                checkElementsVisible()
-            },100)
         })
     </script>
 </head>
 
-<body id="momentum-body" class="bg-[#070707] overflow-hidden">
+<body id="momentum-body" class="bg-[#070707]">
     <div id="loader-fade-opacity" class="absolute z-[100] bg-black inset-0 flex items-center justify-center">
         <h1 id="loader-percent" class="main-text"></h1>
     </div>
