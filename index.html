@@ -11,6 +11,14 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="src/js/works-showcase.js"></script>
         <script src="src/js/animations.js"></script>
+        <script>
+            $(window).on('load', function(){
+                $(window).on('scroll', function () {
+                    checkScrollFooterEffect();
+                    checkScrollOpacity();
+                })
+            })
+        </script>
     </head>
     <body class="bg-[#070707]">
         <div id="loader-fade-opacity" class="absolute z-[100] bg-black inset-0 flex items-center justify-center">

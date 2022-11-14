@@ -17,20 +17,7 @@ $(window).on('load', function(){
     $('#loader-fade-opacity').animate({ opacity: 0 }, 500 , function() {
         $('#loader-fade-opacity').hide()
     });
-    const lastUrlSegment = getLastUrlSegment(window.location.href)
-    console.log(lastUrlSegment)
-    $(window).on('scroll', function(){
-        if (lastUrlSegment == 'index.html' || lastUrlSegment == null) {
-            console.log("active")
-            checkScrollFooterEffect();
-            checkScrollOpacity();
-        }
-    })
 })
-
-function getLastUrlSegment(url) {
-    return new URL(url).pathname.split('/').filter(Boolean).pop();
-}
 
 function checkScrollOpacity(){
     var st = $(window).scrollTop();
@@ -45,12 +32,9 @@ function checkScrollOpacity(){
     }
 }
 function checkScrollFooterEffect(){
-    console.log("called")
     if ($('#footer').position().top - $(window).scrollTop() < 0 && $(window).width() > 800) {
-        console.log("passed")
         $('#showcase-content').addClass('mx-20')
     } else {
-        console.log("not passed")
         $('#showcase-content').removeClass('mx-20')
     }
 }
