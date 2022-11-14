@@ -18,6 +18,7 @@ $(window).on('load', function(){
         $('#loader-fade-opacity').hide()
     });
     const lastUrlSegment = getLastUrlSegment(window.location.href)
+    console.log(lastUrlSegment)
     $(window).on('scroll', function(){
         if (lastUrlSegment == 'index.html' || lastUrlSegment == null) {
             console.log("active")
