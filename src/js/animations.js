@@ -18,7 +18,7 @@ $(window).on('load', function(){
         $('#loader-fade-opacity').hide()
     });
     $(window).on('scroll', function(){
-        if (location.pathname == '/index.html') {
+        if (location.pathname == '/index.html' || location.pathname == '/') {
             checkScrollFooterEffect();
             checkScrollOpacity();
         }

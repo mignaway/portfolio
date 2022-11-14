@@ -36,7 +36,7 @@ $(window).on('load', function () {
     })
 })
 
-function loadPreviewAndUpdateIndex(index, arrow_side_id){
+function loadPreviewAndUpdateIndex(index){
     const data = WORKS_DATA[index];
 
     $('#showcase-main-preview').removeClass('showcase-custom-slide-in-right')
