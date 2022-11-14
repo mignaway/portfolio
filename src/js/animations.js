@@ -20,6 +20,7 @@ $(window).on('load', function(){
     const lastUrlSegment = getLastUrlSegment(window.location.href)
     $(window).on('scroll', function(){
         if (lastUrlSegment == 'index.html' || lastUrlSegment == null) {
+            console.log("active")
             checkScrollFooterEffect();
             checkScrollOpacity();
         }
@@ -43,9 +44,12 @@ function checkScrollOpacity(){
     }
 }
 function checkScrollFooterEffect(){
+    console.log("called")
     if ($('#footer').position().top - $(window).scrollTop() < 0 && $(window).width() > 800) {
+        console.log("passed")
         $('#showcase-content').addClass('mx-20')
     } else {
+        console.log("not passed")
         $('#showcase-content').removeClass('mx-20')
     }
 }
