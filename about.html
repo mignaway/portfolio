@@ -18,6 +18,28 @@
     <script>
         
         $(window).on('load', function () {
+            var Scrollbar = window.Scrollbar;
+            function MobilePlugin() {
+                Scrollbar.ScrollbarPlugin.apply(this, arguments);
+            }
+
+            MobilePlugin.prototype = Object.create(Scrollbar.ScrollbarPlugin.prototype);
+
+            MobilePlugin.prototype.transformDelta = function (delta, fromEvent) {
+                if (fromEvent.type !== 'touchend') {
+                    return delta;
+                }
+
+                return {
+                    x: delta.x * this.options.speed,
+                    y: delta.y * this.options.speed
+                };
+            };
+
+            MobilePlugin.pluginName = 'filterEvent';
+            MobilePlugin.defaultOptions = {
+                speed: 0.5,
+            };
             var scrollbar = Scrollbar.init(document.getElementById('momentum-body'), { 'damping': 0.03 })
             Scrollbar.detachStyle()
             scrollbar.addListener(({ offset }) => {
@@ -53,7 +75,7 @@
     
     <!-- <div id="scroll-bg-fade" class="z-[60] bg-black fixed inset-0 opacity-0 hidden"></div> -->
     <div id="work-content" class="relative overflow-hidden sticky z-[60] bg-[#111111] min-h-[100vh]">
-        <h1 class="absolute z-[61] right-[calc(4%-40px)] top-20 main-text text-white/[.05] text-[550px] rotate-180 whitespace-nowrap leading-[3px]" style="writing-mode: vertical-rl">Designer</h1>
+        <h1 class="absolute z-[61] right-[calc(4%-40px)] top-20 main-text text-white/[.05] text-[550px] rotate-180 whitespace-nowrap leading-[3px] pointer-events-none" style="writing-mode: vertical-rl">Designer</h1>
         <!-- CONTENT -->
         <div class="py-[250px] pl-[calc(20%-40px)] pr-[25px] bg-[#111111] flex flex-col gap-y-[200px] mx-0 transition-[margin] duration-300 ease-in-out">
             <h1 class="block overflow-hidden"><span class="custom-translate-hide block main-text font-semibold md:text-[40px] text-[30px]  w-full max-w-[850px] leading-[150%] transition  duration-1000">I’m an Independent Full Stack Developer with years of experience in Web Development & Design.</span></h1>
