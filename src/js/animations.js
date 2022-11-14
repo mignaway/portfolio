@@ -17,13 +17,18 @@ $(window).on('load', function(){
     $('#loader-fade-opacity').animate({ opacity: 0 }, 500 , function() {
         $('#loader-fade-opacity').hide()
     });
+    const lastUrlSegment = getLastUrlSegment(window.location.href)
     $(window).on('scroll', function(){
-        if (location.pathname == '/index.html' || location.pathname == '/') {
+        if (lastUrlSegment == 'index.html' || location.pathname == null) {
             checkScrollFooterEffect();
             checkScrollOpacity();
         }
     })
 })
+
+function getLastUrlSegment(url) {
+    return new URL(url).pathname.split('/').filter(Boolean).pop();
+}
 
 function checkScrollOpacity(){
     var st = $(window).scrollTop();
