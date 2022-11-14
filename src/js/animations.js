@@ -19,7 +19,7 @@ $(window).on('load', function(){
     });
     const lastUrlSegment = getLastUrlSegment(window.location.href)
     $(window).on('scroll', function(){
-        if (lastUrlSegment == 'index.html' || location.pathname == null) {
+        if (lastUrlSegment == 'index.html' || lastUrlSegment == null) {
             checkScrollFooterEffect();
             checkScrollOpacity();
         }
