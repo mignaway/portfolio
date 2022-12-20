@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-QTH9L331WV" defer></script>
@@ -13,25 +13,23 @@
         <meta name="author" content="Simone Mignanelli">
         <title>Simone Mignanelli - Work</title>
         <meta name="description" content="Simone Mignanelli - Portfolio - Developer and Designer">
-        <link href="src/css/main.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" as="style">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="src/js/works-showcase.js"></script>
-        <script src="src/js/animations.js" defer></script>
+        <link href="src/css/main.css" rel="stylesheet">
+        <script src="src/js/animations.js"></script>
         <script>
-            $(window).on('load', function(){
-                $(window).on('scroll', function () {
-                    checkScrollFooterEffect();
-                    checkScrollOpacity();
+            window.addEventListener("load", function () { 
+                window.addEventListener('scroll', function () {
+                    checkScrollFooterEffect(this.scrollY);
+                    checkScrollOpacity(this.scrollY);
                 })
             })
         </script>
     </head>
     <body class="bg-[#070707]">
-        <div id="loader-fade-opacity" class="absolute z-[100] bg-black inset-0 flex items-center justify-center">
+        <div id="loader-fade-opacity" class="absolute z-[100] bg-black inset-0 flex items-center justify-center opacity-100">
             <h1 id="loader-percent" class="main-text"></h1>
         </div>
         <!-- NAVBAR -->
@@ -56,7 +54,7 @@
                     </defs>
                 </svg>
                 <div class="w-full max-w-[1300px] flex items-center justify-center">
-                    <img id="showcase-main-preview" class="cursor-pointer w-full scale-[.7] hover:scale-[.8]  transition ease-[cubic-bezier(.88,1.58,.31,.73)] duration-300" src="" alt="showcase_preview">
+                    <img id="showcase-main-preview" width="100%" class="cursor-pointer scale-[.7] hover:scale-[.8]  transition ease-[cubic-bezier(.88,1.58,.31,.73)] duration-300" src="" alt="showcase_preview">
                 </div>
                 <svg id="showcase-arrow-right" class="w-[25px] h-[25px] md:w-[40px] md:h-[40px] cursor-pointer opacity-30 hover:opacity-90 transition ease-in-out" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_908_722)">
@@ -71,7 +69,7 @@
             </div>
             <!-- SCROLL TEXT -->
             <div class="absolute right-0 left-0 bottom-8 flex flex-col opacity-50 items-center gap-y-2">
-                <h1 class="main-text text-xs md:text-base font-semibold">Scroll to see about</h1>
+                <h1 class="main-text text-xs md:text-base">Scroll to see about</h1>
                 <svg class="w-[25px] h-[25px] md:w-[33px] md:h-[33px]" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M16.5 29.7C18.9506 29.7 21.3008 28.7265 23.0337 26.9937C24.7665 25.2609 25.74 22.9106 25.74 20.46V12.54C25.74 10.0894 24.7665 7.73922 23.0337 6.00638C21.3008 4.27355 18.9506 3.30005 16.5 3.30005C14.0494 3.30005 11.6992 4.27355 9.96634 6.00638C8.23351 7.73922 7.26001 10.0894 7.26001 12.54V20.46C7.26001 22.9106 8.23351 25.2609 9.96634 26.9937C11.6992 28.7265 14.0494 29.7 16.5 29.7ZM8.58001 12.54C8.58001 10.4395 9.41444 8.42505 10.8997 6.93976C12.385 5.45448 14.3995 4.62005 16.5 4.62005C18.6005 4.62005 20.615 5.45448 22.1003 6.93976C23.5856 8.42505 24.42 10.4395 24.42 12.54V20.46C24.42 22.5606 23.5856 24.575 22.1003 26.0603C20.615 27.5456 18.6005 28.38 16.5 28.38C14.3995 28.38 12.385 27.5456 10.8997 26.0603C9.41444 24.575 8.58001 22.5606 8.58001 20.46V12.54Z"
@@ -87,8 +85,8 @@
                 <div class="flex flex-col-reverse gap-y-8 gap-x-8 lg:flex-row lg:justify-between">
                     <div class="flex flex-col gap-y-8 lg:gap-y-12">
                         <div class="flex flex-col gap-y-4">
-                            <h1 id="showcase-name" class="main-text text-2xl md:text-4xl tracking-wider font-bold">Epub Reader</h1>
-                            <div class="flex flex-row gap-x-3 items-center"><div id="showcase-hex-color" class="w-[10px] h-[10px] rounded-full"></div><h1 id="showcase-type" class="main-text text-base md:text-lg">App + Design</h1></div>
+                            <h1 id="showcase-name" class="main-text text-2xl md:text-4xl tracking-wider font-bold"></h1>
+                            <div class="flex flex-row gap-x-3 items-center"><div id="showcase-hex-color" class="w-[10px] h-[10px] rounded-full"></div><h1 id="showcase-type" class="main-text text-base md:text-lg"></h1></div>
                         </div>
                         <p id="showcase-description" class="main-text text-base md:text-lg max-w-[800px]"></p>
                         <div class="flex flex-row items-center">
@@ -107,15 +105,15 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <a id="showcase-github-link" href="https://www.github.com/mignaway/EpubReader" class="underline main-text text-base md:text-lg ml-3" target="_blank">github.com/mignaway/EpubReader</a>
+                            <a id="showcase-github-link" class="underline main-text text-base md:text-lg ml-3" target="_blank"></a>
                         </div>
                     </div>
-                    <img id="showcase-animated-logo" class="max-w-[150px] max-h-[150px] lg:max-w-[250px] lg:max-h-[250px]" src="src/assets/epubreader-logo.gif" alt="epubreader-logo-animated" loading="lazy"> 
+                    <img id="showcase-animated-logo" class="max-w-[150px] max-h-[150px] lg:max-w-[250px] lg:max-h-[250px]" alt="logo-animated" loading="lazy"> 
                 </div>
                 <div class="w-100 h-[1px] bg-white/10"></div>
                 <div class=" flex flex-col w-100 items-end gap-y-8">
-                    <img id="showcase-website-image" class="w-100" src="src/assets/epubreader_website_preview.png" alt="epubreader-website-preview" loading="lazy">
-                    <a id="showcase-website-link" target="_blank" href="" class="group flex flex-row items-center gap-x-4 cursor-pointer">
+                    <img id="showcase-website-image" width="100%" alt="website-preview" loading="lazy">
+                    <a id="showcase-website-link" target="_blank" class="group flex flex-row items-center gap-x-4 cursor-pointer">
                         <h1 class="main-text text-base md:text-lg group-hover:underline">Go to website</h1>
                         <svg class="md:w-[21px] md:h-[16px] w-[19px] h-[14px]"  viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -130,7 +128,7 @@
                 <div class="w-full flex flex-col-reverse md:flex-row gap-x-20 gap-y-10 justify-between p-10 md:p-20 ">
                     <div>
                         <div>
-                            <h1 class="main-text text-2xl md:text-3xl mb-5">Simone Mignanelli</h1>
+                            <h1 class="main-text text-2xl md:text-3xl mb-5 font-semibold tracking-wider">Simone Mignanelli</h1>
                             <p class="main-text text-base md:text-lg mb-10 max-w-[700px]"><span class="opacity-[.75]">Thank you for your time. Please feel free to contact me if you need any further information or collaboration requests at</span><a target="_blank" href="mailto:simonemignanelli@gmail.com"> simonemignanellicc@gmail.com</a><span class="opacity-[.75]">.</span></p>
                         </div>
                         <h2 class="main-text text-xs md:text-base opacity-50">Copyright © 2022 - All Rights Deserved</h2>

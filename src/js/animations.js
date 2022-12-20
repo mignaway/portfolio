@@ -1,40 +1,48 @@
 var loaded = false
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
     var loading_percent = 0;
     (function loop() {
         var rand = Math.random() * 100
         setTimeout(() => {
             if (loading_percent < 100 && !loaded)  {
-                $('#loader-percent').text(loading_percent++ + '%')
+                document.querySelector('#loader-percent').innerHTML = loading_percent++ + '%'
                 loop()
             }
         }, rand)
     }());
 })
-$(window).on('load', function(){
+window.addEventListener('load', function(){
     loaded = true
-    $('#loader-percent').text('100%')
-    $('#loader-fade-opacity').animate({ opacity: 0 }, 500 , function() {
-        $('#loader-fade-opacity').hide()
-    });
+    document.querySelector('#loader-percent').innerHTML = '100%'
+    let loader_fade_opacity = document.querySelector('#loader-fade-opacity')
+    var increment = 0.1;
+    var opacity = 1;
+    var fade = setInterval(function() {
+        loader_fade_opacity.style.opacity = opacity
+        opacity = opacity - increment;
+        if(opacity <= 0){
+            clearInterval(fade);
+            loader_fade_opacity.style.display = 'none'
+        }
+    },10)
 })
 
-function checkScrollOpacity(){
-    var st = $(window).scrollTop();
-    var window_size = $(window).height();
-    if (st <= window_size) {
-        $('#scroll-bg-fade').css({ 'opacity': st / window_size })
+function checkScrollOpacity(scrollY){
+    var window_size = window.innerHeight;
+    let scroll_bg = document.querySelector('#scroll-bg-fade')
+    if (scrollY <= window_size) {
+        scroll_bg.style.opacity = scrollY / window_size
     }
-    if (st == 0) {
-        $('#scroll-bg-fade').hide();
+    if (scrollY == 0) {
+        scroll_bg.style.display = 'none'
     } else {
-        $('#scroll-bg-fade').show();
+        scroll_bg.style.display = 'block'
     }
 }
-function checkScrollFooterEffect(){
-    if ($('#footer').position().top - $(window).scrollTop() < 0 && $(window).width() > 800) {
-        $('#showcase-content').addClass('mx-20')
+function checkScrollFooterEffect(scrollY){
+    if (document.querySelector('#footer').offsetTop - scrollY < 0 && window.innerWidth > 800) {
+        document.querySelector('#showcase-content').classList.add('mx-20')
     } else {
-        $('#showcase-content').removeClass('mx-20')
+        document.querySelector('#showcase-content').classList.remove('mx-20')
     }
 }

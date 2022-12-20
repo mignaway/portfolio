@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
 <head>
     <!-- Google tag (gtag.js) -->
@@ -17,8 +17,6 @@
     <link href="src/css/main.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link ref="preload" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" as="style">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.1/smooth-scrollbar.js"></script>
     <script src="src/js/animations.js"></script>
@@ -27,9 +25,19 @@
     <script>history.scrollRestoration = "manual"</script>
     <script>
         
-        $(window).on('load', function () {
+        window.addEventListener('load', function () {
             if (window.matchMedia("(min-width: 1024px)").matches) {
-                $('#momentum-body').addClass("overflow-hidden")
+                // Add hover animation preview move mouse
+                document.querySelectorAll('.project-preview').forEach(element => {
+                    element.addEventListener('mousemove', function (e) {
+                        var content = this.querySelector('.project-preview-content');
+                        content.style.transform = `translate(${e.pageX - this.getBoundingClientRect().left - (content.offsetWidth / 2)}px, ${e.pageY - this.getBoundingClientRect().top - (content.offsetHeight - 15)}px)`
+                    })
+                    element.addEventListener('mouseenter', function () { this.querySelector('.project-preview-content').classList.remove('!hidden') })
+                    element.addEventListener('mouseleave', function () { this.querySelector('.project-preview-content').classList.add('!hidden') })
+                });
+                // Add scrolling momentum
+                document.querySelector('#momentum-body').classList.add("overflow-hidden")
                 var scrollbar = Scrollbar.init(document.getElementById('momentum-body'), { 'damping': 0.03 })
                 Scrollbar.detachStyle()
                 scrollbar.addListener(({ offset }) => {
@@ -38,7 +46,6 @@
                     checkElementsVisible()
                 })
                 function checkElementsVisible() {
-
                     var elements = document.querySelectorAll(".custom-translate-hide")
                     // console.log(elements.length)
                     Array.from(elements).forEach((elem, i) => {
@@ -64,13 +71,11 @@
         <h1 id="loader-percent" class="main-text"></h1>
     </div>
     <!-- NAVBAR -->
-    <ul id="main-navbar" class="fixed bg-gradient-to-b from-[rgba(0,0,0,.5)] to-[rgba(0,0,0,0)] top-0 py-8 z-[70] w-full flex flex-row gap-x-12 justify-center list-style-none">
+    <ul id="main-navbar" class="fixed bg-gradient-to-b from-[rgba(0,0,0,.5)] to-[rgba(0,0,0,0)] top-0 py-8 z-[70] w-full flex flex-row gap-x-12 justify-center list-style-none will-change-[top,left]">
         <a href="index.html"><li class="main-text opacity-25 hover:opacity-100 transition ease-in">Work</li></a>
         <a href="#"><li class="main-text">About</li></a>
     </ul>
-    <!-- HELLO THERE RIGHT TEXT -->
     
-    <!-- <div id="scroll-bg-fade" class="z-[60] bg-black fixed inset-0 opacity-0 hidden"></div> -->
     <div id="work-content" class="relative overflow-hidden sticky z-[60] bg-[#111111] min-h-[100vh]">
         <h1 class="absolute z-[61] right-[calc(4%-40px)] top-20 main-text text-white/[.05] text-[550px] rotate-180 whitespace-nowrap leading-[3px] pointer-events-none" style="writing-mode: vertical-rl">Designer</h1>
         <!-- CONTENT -->
@@ -89,7 +94,7 @@
                             <span class="main-text text-xs align-middle">•</span>
                             <span class="main-text md:text-lg text-base align-middle">2022</span>
                         </div></div>
-                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5 will-change-transform">
                             <img class="w-full max-w-[300px] max-h-[200px] opacity-[.95]" src="src/assets/epubreader/epubreader_website_preview.png">
                             <div class="w-[30px] h-[30px] rounded-full bg-[#E3B230] flex items-center justify-center">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,7 +112,7 @@
                             <span class="main-text text-xs align-middle">•</span>
                             <span class="main-text md:text-lg text-base align-middle">2022</span>
                         </div></div>
-                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5 will-change-transform">
                             <img class="w-full max-w-[300px] max-h-[200px] opacity-[.95]" src="src/assets/sorting-data-visualizer/sorting-data-visualizer_website_preview.png">
                             <div class="w-[30px] h-[30px] rounded-full bg-[#EB3B50] flex items-center justify-center">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,7 +130,7 @@
                             <span class="main-text text-xs align-middle">•</span>
                             <span class="main-text md:text-lg text-base align-middle">2022</span>
                         </div></div>
-                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5 will-change-transform">
                             <img class="w-full max-w-[300px] max-h-[200px] opacity-[.95]" src="src/assets/about/project-not-available.jpg">
                             <div class="w-[30px] h-[30px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +148,7 @@
                             <span class="main-text text-xs align-middle">•</span>
                             <span class="main-text md:text-lg text-base align-middle">2022</span>
                         </div></div>
-                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5 will-change-transform">
                             <img class="w-full max-w-[300px] max-h-[200px] opacity-[.95]" src="src/assets/about/project-not-available.jpg">
                             <div class="w-[30px] h-[30px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -161,7 +166,7 @@
                             <span class="main-text text-xs align-middle">•</span>
                             <span class="main-text md:text-lg text-base align-middle">2022</span>
                         </div></div>
-                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5">
+                        <div class="project-preview-content top-0 left-0 pointer-events-none !hidden absolute flex flex-col items-center gap-y-2.5 will-change-transform">
                             <img class="w-full max-w-[300px] max-h-[200px] opacity-[.95]" src="src/assets/about/project-not-available.jpg">
                             <div class="w-[30px] h-[30px] rounded-full bg-[#1F1F1F] flex items-center justify-center">
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
